@@ -20,7 +20,11 @@ export const databaseConfig: IDatabaseConfig = {
     host: process.env.PRODUCTION_DB_HOST,
     port: process.env.PRODUCTION_DB_PORT,
     dialect: process.env.PRODUCTION_DB_DIALECT,
-    urlDatabase: process.env.PRODUCTION_DB_URL,
-    ssl: true,
+    dialectOptions: {
+      ssl: {
+        require: true,
+        rejectUnauthorized: false
+      }
+    },
   },
 };
