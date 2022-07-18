@@ -14,7 +14,7 @@ export class BookingsService {
 
   async createBooking(booking: BookingsDto): Promise<Bookings | string> {
     const bookingCount = await this.getBookingsByHotelId(booking.hotelId);
-    if (bookingCount.count <= 10) {
+    if (bookingCount.count >= 10) {
       return Promise.resolve(HOTELS_BOOKING_LIMIT_MESSAGE);
     }
     return await this.bookingsRepository.create<Bookings>(booking);
