@@ -22,7 +22,7 @@ export const databaseProviders = [
             }
             const sequelize = new Sequelize(config);
             sequelize.addModels([Bookings, Hotels]);
-            await sequelize.sync();
+            await sequelize.sync({force: true});
             return sequelize;
         },
     },
