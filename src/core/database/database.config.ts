@@ -16,7 +16,7 @@ export const databaseConfig: IDatabaseConfig = {
   production: {
     username: process.env.PRODUCTION_DB_USER,
     password: process.env.PRODUCTION_DB_PASS,
-    database: process.env.PRODUCTION_DB_NAME_PRODUCTION,
+    database: process.env.PRODUCTION_DB_NAME,
     host: process.env.PRODUCTION_DB_HOST,
     port: process.env.PRODUCTION_DB_PORT,
     dialect: process.env.PRODUCTION_DB_DIALECT,
