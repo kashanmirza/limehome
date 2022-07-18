@@ -6,9 +6,9 @@ import { HotelsController } from './hotels.controller';
 import { HereService } from '../here/here.service';
 
 @Module({
-  imports:[HttpModule],
+  imports: [HttpModule],
   providers: [HotelsService, ...hotelsProviders, HereService],
   exports: [HotelsService],
-  controllers: [HotelsController]
+  controllers: [HotelsController],
 })
 export class HotelsModule {}

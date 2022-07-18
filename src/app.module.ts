@@ -15,7 +15,7 @@ import { BookingsModule } from './modules/bookings/bookings.module';
     PassportModule,
     DatabaseModule,
     HotelsModule,
-    BookingsModule
+    BookingsModule,
   ],
   controllers: [AppController],
   providers: [AppService],

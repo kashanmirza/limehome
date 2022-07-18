@@ -13,7 +13,10 @@ export class HotelsService {
   ) {}
 
   async addHotels(lat: number, long: number): Promise<Hotels[]> {
-    const hotelList: Hotels[] = await this.hereService.getHotelListByLatLong(lat, long);
+    const hotelList: Hotels[] = await this.hereService.getHotelListByLatLong(
+      lat,
+      long,
+    );
     return await this.hotelsRepository.bulkCreate<Hotels>(hotelList, {
       updateOnDuplicate: ['uniqueId'],
     });
@@ -21,10 +24,10 @@ export class HotelsService {
 
   async getAllHotels(lat: number, long: number): Promise<Hotels[]> {
     return await this.hotelsRepository.findAll<Hotels>({
-        where: {
-          latitude : lat,
-          longitude: long
-        }
+      where: {
+        latitude: lat,
+        longitude: long,
+      },
     });
   }
 }
